@@ -1,1 +1,1 @@
-Download link: https://minecraft.curseforge.com/projects/no-lan-cheating
+Download link: https://curseforge.com/minecraft/mc-mods/no-lan-cheating
