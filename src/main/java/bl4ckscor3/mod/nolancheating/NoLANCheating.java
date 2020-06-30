@@ -20,8 +20,8 @@ public class NoLANCheating
 		{
 			ShareToLanScreen screen = (ShareToLanScreen)event.getGui();
 
-			screen.allowCheatsButton.visible = false;
-			screen.gameModeButton.x = screen.width / 2 - screen.gameModeButton.getWidth() / 2;
+			screen.allowCheatsButton.field_230694_p_ = false; //visible
+			screen.gameModeButton.field_230690_l_ = screen.field_230708_k_ / 2 - screen.gameModeButton.func_230998_h_() / 2; //x, width, getWidth
 		}
 	}
 }
