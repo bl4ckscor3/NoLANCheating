@@ -1,5 +1,6 @@
 package bl4ckscor3.mod.nolancheating;
 
+import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.screens.ShareToLanScreen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.GuiScreenEvent.InitGuiEvent;
@@ -19,9 +20,11 @@ public class NoLANCheating
 		if(event.getGui() instanceof ShareToLanScreen)
 		{
 			ShareToLanScreen screen = (ShareToLanScreen)event.getGui();
+			AbstractButton commandsButton = (AbstractButton)screen.renderables.get(1);
+			AbstractButton modeButton = (AbstractButton)screen.renderables.get(0);
 
-			screen.commandsButton.visible = false;
-			screen.modeButton.x = screen.width / 2 - screen.modeButton.getWidth() / 2;
+			commandsButton.visible = false;
+			modeButton.x = screen.width / 2 - modeButton.getWidth() / 2;
 		}
 	}
 }
