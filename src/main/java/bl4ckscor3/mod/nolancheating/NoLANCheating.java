@@ -1,6 +1,6 @@
 package bl4ckscor3.mod.nolancheating;
 
-import net.minecraft.client.gui.screen.ShareToLanScreen;
+import net.minecraft.client.gui.screens.ShareToLanScreen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.GuiScreenEvent.InitGuiEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
