@@ -17,9 +17,8 @@ public class NoLANCheating
 	@SubscribeEvent
 	public static void onGuiInit(InitScreenEvent.Post event)
 	{
-		if(event.getScreen() instanceof ShareToLanScreen)
+		if(event.getScreen() instanceof ShareToLanScreen screen)
 		{
-			ShareToLanScreen screen = (ShareToLanScreen)event.getScreen();
 			AbstractButton commandsButton = (AbstractButton)screen.renderables.get(1);
 			AbstractButton modeButton = (AbstractButton)screen.renderables.get(0);
 
