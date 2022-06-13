@@ -1,12 +1,12 @@
-modLoader="javafml" #mandatory
-loaderVersion="[38,)" #mandatory
-license="GNU GPL v3.0 https://github.com/bl4ckscor3/NoLANCheating/blob/1.18/LICENSE"
+modLoader="javafml"
+loaderVersion="[41,)"
+license="GNU GPL v3.0 https://github.com/bl4ckscor3/NoLANCheating/blob/1.19/LICENSE"
 
-[[mods]] #mandatory
-	modId="nolancheating" #mandatory
-	version="${file.jarVersion}" #mandatory
-	displayName="No LAN Cheating" #mandatory
-	description='''Removes the "Allow Cheats" button from the "Open to LAN" menu.''' #mandatory
+[[mods]]
+	modId="nolancheating"
+	version="${file.jarVersion}"
+	displayName="No LAN Cheating"
+	description='''Removes the "Allow Cheats" button from the "Open to LAN" menu.'''
 	issueTrackerURL="http://github.com/bl4ckscor3/NoLANCheating/issues"
 	displayURL="https://curseforge.com/minecraft/mc-mods/no-lan-cheating"
 	authors="bl4ckscor3"
@@ -14,13 +14,13 @@ license="GNU GPL v3.0 https://github.com/bl4ckscor3/NoLANCheating/blob/1.18/LICE
 [[dependencies.nolancheating]]
     modId="forge"
     mandatory=true
-    versionRange="[38,)"
+    versionRange="[41,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.nolancheating]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18,1.19)"
+    versionRange="[1.19,1.20)"
     ordering="NONE"
     side="BOTH"
