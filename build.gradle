@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 
-version = '1.0'
+version = '1.0.1'
 group = 'bl4ckscor3.mod.nolancheating'
 archivesBaseName = 'nolancheating-1.19'
 
@@ -37,7 +37,7 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19-41.0.19'
+    minecraft 'net.minecraftforge:forge:1.19-41.0.64'
 }
 
 jar {

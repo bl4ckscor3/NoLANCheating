@@ -3,7 +3,7 @@ package bl4ckscor3.mod.nolancheating;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.screens.ShareToLanScreen;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ScreenEvent.InitScreenEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -15,7 +15,7 @@ public class NoLANCheating
 	public static final String MODID = "nolancheating";
 
 	@SubscribeEvent
-	public static void onGuiInit(InitScreenEvent.Post event)
+	public static void onGuiInit(ScreenEvent.Init.Post event)
 	{
 		if(event.getScreen() instanceof ShareToLanScreen screen)
 		{
