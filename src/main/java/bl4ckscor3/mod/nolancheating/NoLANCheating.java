@@ -20,7 +20,7 @@ public class NoLANCheating {
 			AbstractButton modeButton = (AbstractButton) screen.renderables.get(0);
 
 			commandsButton.visible = false;
-			modeButton.x = screen.width / 2 - modeButton.getWidth() / 2;
+			modeButton.setX(screen.width / 2 - modeButton.getWidth() / 2);
 		}
 	}
 }
