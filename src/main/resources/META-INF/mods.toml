@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[41,)"
-license="GNU GPL v3.0 https://github.com/bl4ckscor3/NoLANCheating/blob/1.19/LICENSE"
+license="MIT https://github.com/bl4ckscor3/NoLANCheating/blob/1.19/LICENSE"
 
 [[mods]]
 	modId="nolancheating"
