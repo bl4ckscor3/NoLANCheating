@@ -1,9 +1,40 @@
-/bin
-/build
-/.gradle
-/.settings
-/run
-.project
-.classpath
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
 *.launch
-.factorypath
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr

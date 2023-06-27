@@ -1,59 +1,50 @@
 plugins {
-    id 'eclipse'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'org.spongepowered.mixin' version '0.7.+'
+	id 'fabric-loom' version '1.+'
 }
 
-version = '1.1'
-group = 'bl4ckscor3.mod.nolancheating'
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
 
 base {
-	archivesName = 'nolancheating-forge-1.20.1'
+	archivesName = project.archives_base_name
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+version = project.mod_version
+group = project.maven_group
 
-minecraft {
-    mappings channel: 'official', version: '1.20.1'
-	copyIdeResources = true
-	
-    runs {
-        client {
-            workingDirectory project.file('run/client')
-            property 'forge.logging.console.level', 'debug'
-            args '-mixin.config=nolancheating.mixins.json'
-
-            mods {
-                nolancheating {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
+repositories {
+	maven { url "https://maven.shedaniel.me/" }
+	maven { url "https://maven.terraformersmc.com/releases" }
 }
 
 dependencies {
-	minecraft 'net.minecraftforge:forge:1.20.1-47.0.19'
-	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
-mixin {
-    add sourceSets.main, "nolancheating.refmap.json"
-}
+processResources {
+	inputs.property "version", project.version
 
-tasks.named('jar', Jar).configure {
-    manifest {
-        attributes(["Specification-Title": "No LAN Cheating",
-                    "Specification-Vendor": "bl4ckscor3",
-                    "Specification-Version": "${version}",
-                    "Implementation-Title": "No LAN Cheating",
-                    "Implementation-Version": "${version}",
-                    "Implementation-Vendor": "bl4ckscor3",
-                    "MixinConfigs": "nolancheating.mixins.json"])
-    }
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+	it.options.encoding = "UTF-8"
+	it.options.release = 17
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.archivesBaseName}"}
+	}
 }

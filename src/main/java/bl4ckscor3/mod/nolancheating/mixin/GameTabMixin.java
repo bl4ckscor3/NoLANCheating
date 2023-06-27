@@ -18,7 +18,7 @@ import net.minecraft.world.Difficulty;
 public class GameTabMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), locals = LocalCapture.CAPTURE_FAILSOFT)
 	private void nolancheating$maybeRemoveAllowCheatsButton(CreateWorldScreen this$0, CallbackInfo ci, GridLayout.RowHelper gridlayout$rowhelper, LayoutSettings layoutsettings, GridLayout.RowHelper gridlayout$rowhelper1, CycleButton<WorldCreationUiState.SelectedGameMode> cyclebutton, CycleButton<Difficulty> cyclebutton1, CycleButton<Boolean> cyclebutton2) {
-		if (NoLANCheating.CONFIG.removeButtonInCreateNewWorldScreen.get())
+		if (NoLANCheating.CONFIG.removeButtonInCreateNewWorldScreen)
 			cyclebutton2.visible = false;
 	}
 }

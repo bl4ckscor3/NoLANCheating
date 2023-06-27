@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "nolancheating",
+	"version": "${version}",
+	"name": "No LAN Cheating",
+	"description": "Removes the \"Allow Cheats\" button from the \"Open to LAN\" menu.",
+	"authors": [
+		"bl4ckscor3"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/no-lan-cheating",
+		"issues": "https://github.com/bl4ckscor3/NoLANCheating/issues",
+		"sources": "https://github.com/bl4ckscor3/NoLANCheating"
+	},
+	"license": "MIT",
+	"icon": "assets/nolancheating/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"bl4ckscor3.mod.nolancheating.NoLANCheating"
+		],
+		"client": [
+			"bl4ckscor3.mod.nolancheating.NoLANCheatingClient"
+		],
+		"modmenu": [
+			"bl4ckscor3.mod.nolancheating.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"nolancheating.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"cloth-config": ">=11.0.99"
+	}
+}
