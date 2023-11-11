@@ -4,25 +4,25 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.screens.ShareToLanScreen;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ScreenEvent;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.config.ModConfig;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.Mod.EventBusSubscriber;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 
 @Mod(NoLANCheating.MODID)
 @EventBusSubscriber(modid = NoLANCheating.MODID, value = Dist.CLIENT)
 public class NoLANCheating {
 	public static final String MODID = "nolancheating";
-	public static final ForgeConfigSpec CONFIG_SPEC;
+	public static final ModConfigSpec CONFIG_SPEC;
 	public static final Config CONFIG;
 
 	static {
-		Pair<Config, ForgeConfigSpec> clientSpecPair = new ForgeConfigSpec.Builder().configure(Config::new);
+		Pair<Config, ModConfigSpec> clientSpecPair = new ModConfigSpec.Builder().configure(Config::new);
 
 		CONFIG_SPEC = clientSpecPair.getRight();
 		CONFIG = clientSpecPair.getLeft();
@@ -43,7 +43,7 @@ public class NoLANCheating {
 	public static class Config {
 		public BooleanValue removeButtonInOpenToLANScreen, removeButtonInCreateNewWorldScreen;
 
-		Config(ForgeConfigSpec.Builder builder) {
+		Config(ModConfigSpec.Builder builder) {
 			//@formatter:off
 			removeButtonInOpenToLANScreen = builder
 					.comment("Removes the \"Allow Cheats\" button in the \"Open to LAN\" screen, if set to \"true\".")
