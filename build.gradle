@@ -5,7 +5,7 @@ plugins {
 	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = '1.1'
+version = '1.2'
 group = 'bl4ckscor3.mod.nolancheating'
 archivesBaseName = 'nolancheating-1.19.4'
 
@@ -30,9 +30,19 @@ minecraft {
     }
 }
 
+repositories {
+    maven {
+        url "https://cursemaven.com/"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.4-45.1.2'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    implementation fg.deobf("curse.maven:mcwifipnp-450250:5056234")
 }
 
 mixin {
