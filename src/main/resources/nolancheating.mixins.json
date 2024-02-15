@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_17",
 	"refmap": "nolancheating.refmap.json",
 	"client": [
+		"CycleButtonAccessor",
 		"GameTabMixin"
 	],
 	"minVersion": "0.8"
