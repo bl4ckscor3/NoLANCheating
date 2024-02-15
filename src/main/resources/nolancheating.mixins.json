@@ -3,6 +3,7 @@
 	"package": "bl4ckscor3.mod.nolancheating.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"client": [
+		"CycleButtonAccessor",
 		"GameTabMixin",
 		"ScreenAccessor"
 	],
