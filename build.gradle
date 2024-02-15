@@ -34,6 +34,7 @@ repositories {
 
 dependencies {
     implementation 'net.neoforged:neoforge:20.4.159-beta'
+    implementation "curse.maven:mcwifipnp-450250:5056245"
 }
 
 tasks.named('jar', Jar).configure {
