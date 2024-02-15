@@ -7,7 +7,7 @@ license="MIT https://github.com/bl4ckscor3/NoLANCheating/blob/1.20/LICENSE"
 	version="${file.jarVersion}"
 	displayName="No LAN Cheating"
 	description='''Removes the "Allow Cheats" button from the "Open to LAN" menu.'''
-	issueTrackerURL="http://github.com/bl4ckscor3/NoLANCheating/issues"
+	issueTrackerURL="https://github.com/bl4ckscor3/NoLANCheating/issues"
 	displayURL="https://curseforge.com/minecraft/mc-mods/no-lan-cheating"
 	authors="bl4ckscor3"
 
