@@ -3,14 +3,13 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.neoforged.gradle.userdev' version '[7.0,7.1)'
-//	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
 version = '1.1'
 group = 'bl4ckscor3.mod.nolancheating'
 
 base {
-	archivesName = 'nolancheating-forge-1.20.2'
+	archivesName = 'nolancheating-neoforge-1.20.4'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -23,8 +22,18 @@ runs {
         modSource project.sourceSets.main
     }
 }
+
+repositories {
+    maven {
+        url "https://cursemaven.com/"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
 dependencies {
-    implementation 'net.neoforged:neoforge:20.2.47-beta'
+    implementation 'net.neoforged:neoforge:20.4.159-beta'
 }
 
 tasks.named('jar', Jar).configure {
