@@ -16,10 +16,10 @@ public class NoLANCheating implements ModInitializer {
 	//@formatter:off
 	@Config(name = "nolancheating")
 	public static class Configuration implements ConfigData {
-		@Comment("Removes the \"Allow Cheats\" button in the \"Open to LAN\" screen.")
+		@Comment("Removes the \"Allow Commands\" button in the \"Open to LAN\" screen.")
 		public boolean removeButtonInOpenToLANScreen = true;
 
-		@Comment("Removes the \"Allow Cheats\" button in the \"Create New World\" screen.")
+		@Comment("Removes the \"Allow Commands\" button in the \"Create New World\" screen.")
 		public boolean removeButtonInCreateNewWorldScreen = false;
 	}
 }
