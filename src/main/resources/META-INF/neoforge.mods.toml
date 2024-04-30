@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[1,)"
-license="MIT https://github.com/bl4ckscor3/NoLANCheating/blob/neoforge/1.20.4/LICENSE"
+license="MIT https://github.com/bl4ckscor3/NoLANCheating/blob/neoforge/1.20.6/LICENSE"
 
 [[mods]]
 	modId="nolancheating"
@@ -17,13 +17,13 @@ license="MIT https://github.com/bl4ckscor3/NoLANCheating/blob/neoforge/1.20.4/LI
 [[dependencies.nolancheating]]
     modId="neoforge"
     type="required"
-    versionRange="[20.4.40-beta,)"
+    versionRange="[20.6,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.nolancheating]]
     modId="minecraft"
     type="required"
-    versionRange="[1.20.4,1.21)"
+    versionRange="[1.20.6,1.21)"
     ordering="NONE"
     side="BOTH"

@@ -7,10 +7,10 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.ShareToLanScreen;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
-import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.common.Mod.EventBusSubscriber;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
@@ -29,7 +29,10 @@ public class NoLANCheating {
 
 		CONFIG_SPEC = clientSpecPair.getRight();
 		CONFIG = clientSpecPair.getLeft();
-		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CONFIG_SPEC);
+	}
+
+	public NoLANCheating(ModContainer modContainer) {
+		modContainer.registerConfig(ModConfig.Type.CLIENT, CONFIG_SPEC);
 	}
 
 	@SubscribeEvent
@@ -59,11 +62,11 @@ public class NoLANCheating {
 		Config(ModConfigSpec.Builder builder) {
 			//@formatter:off
 			removeButtonInOpenToLANScreen = builder
-					.comment("Removes the \"Allow Cheats\" button in the \"Open to LAN\" screen, if set to \"true\".")
+					.comment("Removes the \"Allow Commands\" button in the \"Open to LAN\" screen, if set to \"true\".")
 					.define("removeButtonInOpenToLANScreen", true);
 
 			removeButtonInCreateNewWorldScreen = builder
-					.comment("Removes the \"Allow Cheats\" button in the \"Create New World\" screen, if set to \"true\".")
+					.comment("Removes the \"Allow Commands\" button in the \"Create New World\" screen, if set to \"true\".")
 					.define("removeButtonInCreateNewWorldScreen", false);
 		}
 	}
