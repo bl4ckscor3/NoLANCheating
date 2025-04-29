@@ -2,25 +2,36 @@ plugins {
     id 'java-library'
     id 'eclipse'
     id 'idea'
-    id 'net.neoforged.gradle.userdev' version '7.0.+'
+	id 'net.neoforged.moddev' version '2.0.82'
 }
 
 version = '1.2'
 group = 'bl4ckscor3.mod.nolancheating'
 
 base {
-	archivesName = 'nolancheating-neoforge-1.21'
+	archivesName = 'nolancheating-neoforge-1.21.5'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
-runs {
-    client {
-        workingDirectory project.file('run/client')
-        systemProperty 'forge.logging.console.level', 'debug'
-        modSource project.sourceSets.main
-    }
+neoForge {
+	version = "21.5.62-beta"
+
+	runs {
+		client {
+			client()
+			logLevel = org.slf4j.event.Level.DEBUG
+			gameDirectory = project.file("run/client")
+			ideName = "NoLANCheating " + ideName.get()
+		}
+	}
+
+	mods {
+		nolancheating {
+			sourceSet(sourceSets.main)
+		}
+	}
 }
 
 repositories {
@@ -33,8 +44,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'net.neoforged:neoforge:21.0.2-beta'
-//	implementation "curse.maven:mcwifipnp-450250:5056245"
+	implementation "curse.maven:mcwifipnp-450250:5646534"
 }
 
 tasks.named('jar', Jar).configure {
@@ -51,4 +61,11 @@ tasks.named('jar', Jar).configure {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 	options.release = 21
+}
+
+idea {
+	module {
+		downloadSources = true
+		downloadJavadoc = true
+	}
 }
