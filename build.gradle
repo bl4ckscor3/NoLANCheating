@@ -5,18 +5,18 @@ plugins {
 	id 'net.neoforged.moddev' version '2.0.82'
 }
 
-version = '1.2'
+version = '1.2.2'
 group = 'bl4ckscor3.mod.nolancheating'
 
 base {
-	archivesName = 'nolancheating-neoforge-1.21.5'
+	archivesName = 'nolancheating-neoforge-1.21.7'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
 neoForge {
-	version = "21.5.62-beta"
+	version = "21.7.1-beta"
 
 	runs {
 		client {
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-	implementation "curse.maven:mcwifipnp-450250:5646534"
+	implementation "curse.maven:mcwifipnp-450250:6671461"
 }
 
 tasks.named('jar', Jar).configure {
