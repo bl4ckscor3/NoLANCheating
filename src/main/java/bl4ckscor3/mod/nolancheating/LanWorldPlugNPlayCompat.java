@@ -4,7 +4,7 @@ import java.util.List;
 
 import bl4ckscor3.mod.nolancheating.mixin.CycleButtonAccessor;
 import bl4ckscor3.mod.nolancheating.mixin.ScreenAccessor;
-import io.github.satxm.mcwifipnp.ShareToLanScreenNew;
+import io.github.satxm.mcwifipnp.client.ShareToLanScreenNew;
 import net.minecraft.client.gui.components.CycleButton;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.screens.Screen;
@@ -16,10 +16,10 @@ public class LanWorldPlugNPlayCompat {
 	public static void check(Screen screen) {
 		if (screen instanceof ShareToLanScreenNew && NoLANCheating.CONFIG.removeButtonInOpenToLANScreen) {
 			List<Renderable> renderables = ((ScreenAccessor) screen).getRenderables();
-			CycleButton<GameType> gamemodeButton = (CycleButton<GameType>) renderables.get(2);
-			CycleButton<Boolean> allowCheatsButton = (CycleButton<Boolean>) renderables.get(3);
-			CycleButton<Boolean> otherPlayersCheatButton = (CycleButton<Boolean>) renderables.get(7);
-			CycleButton<Boolean> whitelistButton = (CycleButton<Boolean>) renderables.get(8);
+			CycleButton<GameType> gamemodeButton = (CycleButton<GameType>) renderables.get(17);
+			CycleButton<Boolean> allowCheatsButton = (CycleButton<Boolean>) renderables.get(10);
+			CycleButton<Boolean> otherPlayersCheatButton = (CycleButton<Boolean>) renderables.get(18);
+			CycleButton<Boolean> whitelistButton = (CycleButton<Boolean>) renderables.get(11);
 
 			((CycleButtonAccessor) allowCheatsButton).callUpdateValue(false);
 			allowCheatsButton.visible = false;
