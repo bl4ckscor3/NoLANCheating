@@ -13,6 +13,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 
@@ -32,6 +34,7 @@ public class NoLANCheating {
 	}
 
 	public NoLANCheating(ModContainer modContainer) {
+		modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
 		modContainer.registerConfig(ModConfig.Type.CLIENT, CONFIG_SPEC);
 	}
 

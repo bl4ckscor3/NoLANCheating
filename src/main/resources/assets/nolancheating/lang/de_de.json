@@ -1,0 +1,6 @@
+{
+	"nolancheating.configuration.removeButtonInCreateNewWorldScreen": "Knopf im \"Neue Welt erstellen\"-Bildschirm entfernen",
+	"nolancheating.configuration.removeButtonInCreateNewWorldScreen.tooltip": "Entfernt den \"Befehle erlauben\"-Knopf vom \"Neue Welt erstellen\"-Bildschirm.",
+	"nolancheating.configuration.removeButtonInOpenToLANScreen": "Knopf im \"Im LAN öffnen\"-Bildschirm entfernen",
+	"nolancheating.configuration.removeButtonInOpenToLANScreen.tooltip": "Entfernt den \"Befehle erlauben\"-Knopf vom \"Im LAN öffnen\"-Bildschirm."
+}
