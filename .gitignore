@@ -1,13 +1,18 @@
-/bin
-/build
-/.gradle
-/.settings
-/run
-/runs
-.project
+# Gradle
+.gradle
+build
+libs
+
+
+# IntelliJ
+.idea
+out
+
+# Eclipse
+.settings
 .classpath
-*.launch
-.factorypath
+.project
 
-.idea/
-
+# Minecraft
+runs
+.cache
