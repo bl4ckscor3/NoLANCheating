@@ -8,7 +8,6 @@ import net.minecraft.client.gui.screens.ShareToLanScreen;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -24,7 +23,6 @@ public class NoLANCheating {
 	public static final String MODID = "nolancheating";
 	public static final ModConfigSpec CONFIG_SPEC;
 	public static final Config CONFIG;
-	public static final boolean IS_LAN_WORLD_PLUG_N_PLAY_INSTALLED = ModList.get().isLoaded("mcwifipnp");
 
 	static {
 		Pair<Config, ModConfigSpec> clientSpecPair = new ModConfigSpec.Builder().configure(Config::new);
@@ -51,8 +49,6 @@ public class NoLANCheating {
 				centerButton(lanScreen, modeButton);
 			}
 		}
-		else if (IS_LAN_WORLD_PLUG_N_PLAY_INSTALLED)
-			LanWorldPlugNPlayCompat.check(screen);
 	}
 
 	public static void centerButton(Screen screen, AbstractButton modeButton) {

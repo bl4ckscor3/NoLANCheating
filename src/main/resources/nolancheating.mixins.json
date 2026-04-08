@@ -5,7 +5,9 @@
 	"refmap": "nolancheating.refmap.json",
 	"client": [
 		"CycleButtonAccessor",
-		"GameTabMixin"
+		"GameTabMixin",
+		"ShareToLanScreenNewDefaultTab1Mixin",
+		"ShareToLanScreenNewDefaultTab2Mixin"
 	],
 	"minVersion": "0.8"
 }
