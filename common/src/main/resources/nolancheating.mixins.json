@@ -5,9 +5,9 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "GameTabMixin",
-    "ScreenAccessor",
-    "ShareToLanScreenNewDefaultTab1Mixin",
-    "ShareToLanScreenNewDefaultTab2Mixin"
+    "MultiplayerOptionsScreenMixin",
+    "ShareToLanScreenNewDefaultTab2Mixin",
+    "WorldOptionsScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

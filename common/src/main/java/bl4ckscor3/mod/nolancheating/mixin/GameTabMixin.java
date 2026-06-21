@@ -13,7 +13,7 @@ import net.minecraft.client.gui.components.CycleButton;
 @Mixin(targets = "net.minecraft.client.gui.screens.worldselection.CreateWorldScreen$GameTab")
 public class GameTabMixin {
 	@Inject(method = "<init>", at = @At("TAIL"))
-	private void nolancheating$maybeRemoveAllowCommandsButton(CallbackInfo ci, @Local(ordinal = 2) CycleButton<Boolean> allowCommandsButton) {
+	private void nolancheating$maybeRemoveAllowCommandsButton(CallbackInfo ci, @Local(name = "allowCommandsButton") CycleButton<Boolean> allowCommandsButton) {
 		if (Config.CONFIG.removeButtonInCreateNewWorldScreen.get())
 			allowCommandsButton.visible = false;
 	}
